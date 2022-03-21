@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:todo_app_design/screens/content-screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
 
-  static const routeName = '/welcome-screen';
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF69c5df),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -33,11 +34,14 @@ class WelcomeScreen extends StatelessWidget {
                   Container(
                     height: 60,
                     width: 160,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      elevation: 0,
-                      color: Colors.orangeAccent,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => ContentScreen()),
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        primary: Colors.white.withOpacity(0.1),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                       child: Text('Get started', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),),),
                   ),
                 ],
